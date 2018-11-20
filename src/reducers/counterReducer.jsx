@@ -18,19 +18,11 @@ const increment = obj => {
 // };
 
 export default (state={}, action) =>{
-    //console.log(`called with state ${JSON.stringify(state)} and action ${JSON.stringify(action)}`);
     switch(action.type){
         case "INCREMENT": 
+        return Object.assign({}, state, { id: action.payload.id, value: action.payload.value+1 });
+//        [...state, {id: action.id, value: action.value+1}];
          break;
-        // case "DECREMENT": 
-        // state = {id: action.payload.id, value:decrement(action.payload)}; break;
-
-        // case "DELETE": 
-        // state = {id: action.payload.id, value:handleDelete(action.payload)}; break;
-
-        // case "RESET": 
-        // state = resetBtn(); break;
-
         default : 
     }
 

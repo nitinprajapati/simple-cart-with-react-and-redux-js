@@ -15,7 +15,7 @@ export default () => {
     },
     {
         id: 4,
-        value: 1
+        value: 3
     }
 ];
 };
