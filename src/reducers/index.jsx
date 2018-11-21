@@ -4,7 +4,7 @@ import defaultCart from './defaultCart';
 
 const allReducers = combineReducers({
     counters : defaultCart,
-    count: countRed
+    counters: countRed
 });
 
 export default allReducers;

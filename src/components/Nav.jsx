@@ -6,7 +6,7 @@ const Navigation = (props) => {
     return (
       <Navbar>
         <Navbar.Header>
-          <Navbar.Brand>Cart count {props.counters.length}</Navbar.Brand>
+          <Navbar.Brand>Cart count {props.counters.filter(c => c.value > 0).length}</Navbar.Brand>
         </Navbar.Header>
       </Navbar>
     );
