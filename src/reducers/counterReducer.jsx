@@ -1,28 +1,48 @@
-const increment = obj => {
-    return obj.value+1;
+import defaultCartValues from './defaultCart';
+
+const increment = (state, changedStated) => {
+    return state.map(c => {
+        c.value = c.id === changedStated.id ? c.value+1: c.value;
+        return c;
+    });
 };
 
-// const decrement = obj => {
-//    return obj.value-1;
-// };
+const decrement = (state, changedStated) => {
+    return state.map(c => {
+        if(c.id === changedStated.id && c.value > 0){
+            c.value = c.value-1;
+        }
+        return c;    
+    });
+};
 
-// const handleDelete = obj => {
-//     return obj;
-// };
+const deleteHandle = (state, changedStated) => {
+    return state.filter(c => c.id !== changedStated.id);
+};
 
-// const resetBtn = () => {
-//     return this.state.counters.map(c => {
-//         c.value = 0;
-//         return c;
-//     });
-// };
+const resetBtn = (state, changedStated) => {
+    return state.map(c => {
+        c.value = c.id === changedStated.id ? 0 : c.value;
+        return c;
+    });
+};
 
-export default (state={}, action) =>{
+const  initialState = defaultCartValues();
+
+export default (state=initialState, action) =>{
     switch(action.type){
         case "INCREMENT": 
-        return Object.assign({}, state, { id: action.payload.id, value: action.payload.value+1 });
-//        [...state, {id: action.id, value: action.value+1}];
-         break;
+            state = increment(state, action.payload);
+        break;
+        case "DECREMENT": 
+            state = decrement(state, action.payload);
+        break;
+        case "DELETE": 
+            state = deleteHandle(state, action.payload);
+        break;
+        case "RESET": 
+            state = resetBtn(state, action.payload);
+        break;
         default : 
     }
 

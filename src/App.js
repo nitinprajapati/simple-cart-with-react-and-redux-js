@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Counters from './components/counters';
-import Navigation from './components/Nav';
+import Navigation from './components/Navbar/Nav';
 
 const App  = () => {
     return (

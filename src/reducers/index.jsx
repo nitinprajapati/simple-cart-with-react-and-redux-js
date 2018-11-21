@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
 import countRed from './counterReducer';
-import defaultCart from './defaultCart';
+//import defaultCart from './defaultCart';
 
 const allReducers = combineReducers({
-    counters : defaultCart,
-    count: countRed
+    counters : countRed,
+   // counters: countRed
 });
 
 export default allReducers;

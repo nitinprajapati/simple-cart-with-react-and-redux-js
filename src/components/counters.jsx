@@ -1,5 +1,5 @@
 import React from 'react';
-import Counter from './counter';
+import Counter from './counter/counter';
 import { connect} from 'react-redux';
 
 const Counters  = (props) => {
