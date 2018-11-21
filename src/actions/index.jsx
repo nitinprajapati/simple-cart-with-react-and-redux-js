@@ -1,31 +1,29 @@
+import * as ACTIONS from './../actions/types';
+
 export const increment = (id) => {
-  console.log(`increment called ${id}`);  
   return {
-      type: "INCREMENT",
+      type: ACTIONS.INCREMENT,
       payload: id
   };
 };
 
 export const decrement = (id) => {
-  console.log(`decrement called ${id}`);  
   return {
-      type: "DECREMENT",
+      type: ACTIONS.DECREMENT,
       payload: id
   };
 };
 
 export const deleteHandle = (id) => {
-  console.log(`deleteHandle called ${id}`);  
   return {
-      type: "DELETE",
+      type: ACTIONS.DELETE,
       payload: id
   };
 }
 
 export const reset = (id) => {
-  console.log(`reset called ${id}`);  
   return {
-      type: "RESET",
+      type: ACTIONS.RESET,
       payload: id
   };
 }

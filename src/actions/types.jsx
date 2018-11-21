@@ -1,11 +1,5 @@
-const INCREMENT =   "INCREMENT";
-const DECREMENT =   "DECREMENT";
-const DELETE    =   "DELETE";
-const RESET     =   "RESET";
+export const INCREMENT =   "INCREMENT";
+export const DECREMENT =   "DECREMENT";
+export const DELETE    =   "DELETE";
+export const RESET     =   "RESET";
 
-export default{
-    INCREMENT: INCREMENT,
-    DECREMENT: DECREMENT,
-    DELETE: DELETE,
-    RESET: RESET
-}

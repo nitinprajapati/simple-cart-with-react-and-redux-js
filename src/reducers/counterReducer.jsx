@@ -1,4 +1,5 @@
 import defaultCartValues from './defaultCart';
+import * as ACTIONS from './../actions/types';
 
 const increment = (state, changedStated) => {
     return state.map(c => {
@@ -31,16 +32,16 @@ const  initialState = defaultCartValues();
 
 export default (state=initialState, action) =>{
     switch(action.type){
-        case "INCREMENT": 
+        case ACTIONS.INCREMENT: 
             state = increment(state, action.payload);
         break;
-        case "DECREMENT": 
+        case ACTIONS.DECREMENT: 
             state = decrement(state, action.payload);
         break;
-        case "DELETE": 
+        case ACTIONS.DELETE: 
             state = deleteHandle(state, action.payload);
         break;
-        case "RESET": 
+        case ACTIONS.RESET: 
             state = resetBtn(state, action.payload);
         break;
         default : 
